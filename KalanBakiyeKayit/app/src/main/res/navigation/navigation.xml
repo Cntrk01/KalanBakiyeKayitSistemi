@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentList">
+
+    <fragment
+        android:id="@+id/fragmentList"
+        android:name="com.example.kykkalanbakiye.view.FragmentList"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_fragmentList_to_fragmentAdd"
+            app:destination="@id/fragmentAdd" />
+        <action
+            android:id="@+id/action_fragmentList_to_fragmentUpdate"
+            app:destination="@id/fragmentUpdate" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentUpdate"
+        android:name="com.example.kykkalanbakiye.view.FragmentUpdate"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_fragmentUpdate_to_fragmentList"
+            app:destination="@id/fragmentList" />
+        <argument
+            android:name="argsID"
+            app:argType="com.example.kykkalanbakiye.model.Note" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAdd"
+        android:name="com.example.kykkalanbakiye.view.FragmentAdd"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_fragmentAdd_to_fragmentList"
+            app:destination="@id/fragmentList" />
+    </fragment>
+</navigation>
